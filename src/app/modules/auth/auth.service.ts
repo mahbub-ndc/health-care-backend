@@ -125,7 +125,7 @@ const forgetPassword = async (email: string) => {
     { id: user.id, email: user.email, role: user.role },
     process.env.JWT_RESET_PASSWORD_SECRET as string,
     {
-      expiresIn: "15m",
+      expiresIn: "20m",
     }
   );
 
