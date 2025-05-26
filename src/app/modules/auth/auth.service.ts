@@ -1,6 +1,7 @@
 import { PrismaClient, userStatus } from "../../../generated/prisma";
 import bycrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import nodemailer from "nodemailer";
 
 const prisma = new PrismaClient();
 
@@ -130,8 +131,6 @@ const forgetPassword = async (email: string) => {
 
   const resetLink = `${process.env.FRONTEND_URL}/reset-password?userId=${user.id}token=${resetToken}`;
   console.log("Reset link:", resetLink);
-
-  const nodemailer = require("nodemailer");
 
   // Create a test account or replace with real credentials.
   const transporter = nodemailer.createTransport({
