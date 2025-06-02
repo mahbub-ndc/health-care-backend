@@ -1,6 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
 import { authController } from "./auth.controller";
-import { verify } from "jsonwebtoken";
 import { auth } from "../../../middlewares/auth";
 import { userRole } from "../../../generated/prisma";
 const router = express.Router();
